@@ -8,7 +8,7 @@ import Arrow from '../assets/images/arrow.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaBullseye, FaCogs } from 'react-icons/fa';
 import FAQSection from './FAQSection';
 
 // Example data for recharts
@@ -38,45 +38,69 @@ export default function AboutUs() {
               <div className='d-flex justify-content-between align-items-center mb-3'>
                 <h2 className="fw-bold text-primary fs-3 m-0" style={{ letterSpacing: 1 }}>About Us</h2>
                 <p className="text-muted fs-6 m-0">
-                  Empowering professionals with trusted market intelligence.
+                  Delivering trusted insights to power smart financial decisions.
                 </p>
               </div>
               <p className="text-muted m-0" style={{ fontSize: '1.13rem', lineHeight: 1.7 }}>
-                <span className="fw-semibold text-primary">Valuation Tool</span> is a modern platform built by a passionate team of analysts, engineers, and visionaries. We simplify complex financial data, making it accessible and actionable for professionals and businesses.
+                <span className="fw-semibold text-primary">Valuation Tool</span> is a next-gen platform designed by a team of forward-thinking analysts and engineers. We transform complex financial data into clear, actionable insights that help professionals and businesses move confidently.
               </p>
             </div>
             <div className='about-card p-4 border mt-3'>
               <h2 className="fw-bold text-primary fs-3" style={{ letterSpacing: 1 }}>Who We Are</h2>
               <p className="text-muted m-0" style={{ fontSize: '1.13rem', lineHeight: 1.7 }}>
-                A modern platform built by a passionate team of analysts, engineers, and visionaries. We simplify complex financial data, making it accessible and actionable for professionals and businesses.
+                We're a diverse team of data experts, tech innovators, and industry specialists driven by a single goal—making financial intelligence simpler, smarter, and accessible for all.
               </p>
             </div>
           </Col>
         </Row>
+
         <Row className='gx-4 mt-0'>
-          <Col lg={6}>
-            <div className='border p-5 d-flex flex-column justify-content-between' style={{ borderRadius: '20px', height: '25rem', backgroundColor: '#fff' }}>
-              <div className='d-flex justify-content-between align-items-start mb-3'>
-                <h2 className="fw-bold text-primary display-3" style={{ letterSpacing: 1 }}>Our Mission</h2>
-                <img src={Arrow} alt="Arrow Icon" style={{ width: '9rem', height: '9rem', filter: 'invert(49%) sepia(87%) saturate(646%) hue-rotate(89deg) brightness(92%) contrast(85%)' }} />
-              </div>
-              <p className="text-muted fs-3 m-0">
-                To empower confident decision making in fast moving markets with reliable, real-time insights.
-              </p>
-            </div>
-          </Col>
-          <Col lg={6}>
-            <div className='border p-5 d-flex flex-column justify-content-center' style={{ borderRadius: '20px', height: '25rem', backgroundColor: '#22C55E' }}>
-              <div className='d-flex justify-content-between align-items-start mb-4'>
-                <h2 className="fw-bold text-light display-6" style={{ letterSpacing: 1 }}>Innovation, accuracy, transparency, and user experience.</h2>
-              </div>
-              <Button className="about-cta btn btn-primary btn-outline-primary text-light" size="lg">
-                Get Started
-                <FontAwesomeIcon icon={faSquareArrowUpRight} className="ms-2" />
-              </Button>
-            </div>
-          </Col>
-        </Row>
+  <Col lg={6}>
+    <div
+      className='border p-5 d-flex flex-column justify-content-between'
+      style={{
+        borderRadius: '20px',
+        height: '25rem',
+        backgroundColor: '#fff',
+      }}
+    >
+      <div className='d-flex justify-content-between align-items-start '>
+        <h2 className="fw-bold text-primary fs-2 m-0" style={{ letterSpacing: 1 }}>
+          Our Mission
+        </h2>
+        <FaBullseye size={65} className="text-primary" />
+      </div>
+      <p className="text-muted fw-bold fs-5 m-0" style={{ lineHeight: 1.8 }}>
+        At Valuation Tool, our mission is to empower businesses, analysts, and investors with real-time, reliable insights
+        that simplify complex decisions. We’re committed to turning data into clear, actionable knowledge so you can move
+        confidently in fast-moving markets, stay ahead of trends, and seize growth opportunities.
+      </p>
+    </div>
+  </Col>
+
+  <Col lg={6}>
+    <div
+      className='border p-5 d-flex flex-column justify-content-center'
+      style={{
+        borderRadius: '20px',
+        height: '25rem',
+        backgroundColor: '#22C55E',
+      }}
+    >
+      <div className='d-flex justify-content-between align-items-start mb-4'>
+        <h2 className="fw-bold text-light fs-4 m-0" style={{ letterSpacing: 1, lineHeight: 1.5 }}>
+          We’re built on innovation and powered by accuracy, transparency, and a seamless user experience.
+        </h2>
+        <FaCogs size={36} className="text-light" />
+      </div>
+      <Button className="about-cta btn btn-primary btn-outline-primary text-light mt-2" size="lg">
+        Get Started
+        <FontAwesomeIcon icon={faSquareArrowUpRight} className="ms-2" />
+      </Button>
+    </div>
+  </Col>
+</Row>
+
 
 
         {/* <div className="row align-items-center g-5">

@@ -7,7 +7,7 @@ const FAQSection = () => {
   return (
     <div>
         <Row className="g-4 mt-4 about-card p-4 border" style={{ margin: '5rem auto', borderRadius: '20px', background: '#fff' }}>
-          <Col lg={8}>
+          <Col lg={12}>
             <h2 className="fw-bold text-primary fs-3 mb-4" style={{ letterSpacing: 1 }}>Frequently Asked Questions</h2>
             <div className="accordion" id="faqAccordion">
               <div className="accordion-item mb-3 border-0">
@@ -60,13 +60,13 @@ const FAQSection = () => {
               </div>
             </div>
           </Col>
-          <Col lg={4} className='d-flex flex-column justify-content-center align-items-center'>
+          {/* <Col lg={4} className='d-flex flex-column justify-content-center align-items-center'>
             <Lottie
               animationData={FAQAnimation}
               loop={true}
               autoplay={true}
             />
-          </Col>
+          </Col> */}
         </Row>
     </div>
   );

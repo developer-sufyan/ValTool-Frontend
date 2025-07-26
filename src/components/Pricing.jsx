@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCheckCircle, FaTimesCircle, FaStar, FaCrown, FaGem, FaShieldAlt, FaQuestionCircle, FaUsers, FaRocket, FaHeadset, FaChartLine, FaLock, FaCloudDownloadAlt, FaMobile, FaInfinity } from 'react-icons/fa';
+import { FaCheckCircle, FaTimesCircle, FaStar, FaCrown, FaGem, FaShieldAlt, FaQuestionCircle, FaUsers, FaRocket, FaHeadset, FaChartLine, FaLock, FaCloudDownloadAlt, FaMobile, FaInfinity, FaLightbulb, FaFileAlt, FaChartBar } from 'react-icons/fa';
 import CallToAction from './CallToAction';
 import FAQSection from './FAQSection';
 
@@ -71,8 +71,7 @@ export default function Pricing() {
             Choose Your Perfect Plan
           </h1>
           <p className="text-muted fs-5 mb-4 mx-auto" style={{ maxWidth: '600px' }}>
-            Professional valuation tools designed for financial analysts, investors, and businesses. 
-            Start your journey with our flexible pricing options.
+           Unlock powerful valuation tools tailored for financial analysts, investors, and businesses—get started today with flexible pricing that fits your needs.
           </p>
           
           {/* Billing Toggle */}
@@ -241,18 +240,43 @@ export default function Pricing() {
                 </div>
                 <div className="col-md-4 text-center">
                   <div className="mb-3">
-                    <FaChartLine size={36} className="text-primary" />
+                    <FaChartLine size={36} className="text-success" />
                   </div>
                   <h6 className="fw-bold">Real-time Data</h6>
                   <p className="text-muted small">Live market data from trusted sources</p>
                 </div>
                 <div className="col-md-4 text-center">
                   <div className="mb-3">
-                    <FaHeadset size={36} className="text-warning" />
+                    <FaHeadset size={36} className="text-success" />
                   </div>
                   <h6 className="fw-bold">Expert Support</h6>
                   <p className="text-muted small">24/7 support from valuation experts</p>
                 </div>
+
+                <div className="col-md-4 text-center">
+                  <div className="mb-3">
+                    <FaLightbulb size={36} className="text-success" />
+                  </div>
+                  <h6 className="fw-bold">Special Focus on Startups</h6>
+                  <p className="text-muted small">Tailored insights to support early-stage growth</p>
+                </div>
+
+                <div className="col-md-4 text-center">
+                  <div className="mb-3">
+                    <FaChartBar size={36} className="text-success" />
+                  </div>
+                  <h6 className="fw-bold">Industry Forecast Available</h6>
+                  <p className="text-muted small">Stay ahead with data-driven industry trends</p>
+                </div>
+
+                <div className="col-md-4 text-center">
+                  <div className="mb-3">
+                    <FaFileAlt size={36} className="text-success" />
+                  </div>
+                  <h6 className="fw-bold">Valuation Report</h6>
+                  <p className="text-muted small">Professional reports for informed decision-making</p>
+                </div>
+
               </div>
             </div>
           </div>
