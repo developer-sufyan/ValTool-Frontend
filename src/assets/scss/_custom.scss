@@ -1,0 +1,38 @@
+// Step 1: Import Bootstrap's core functions
+@import "../../../node_modules/bootstrap/scss/functions";
+
+// Step 2: Import Bootstrap's default variables so you can access $theme-colors
+@import "../../../node_modules/bootstrap/scss/variables";
+
+// Step 3: Now override Bootstrap variables - Modern Premium Theme
+$primary: #000000;        // Black
+$secondary: #6B7280;      // Grey
+$success: #22C55E;        // Green accent
+$info: #F9FAFB;          // Light grey/white
+$warning: #10B981;        // Alternative green
+$body-bg: #FFFFFF;        // Pure white
+$body-color: #1F2937;     // Dark grey for text
+$text-muted: #9CA3AF;     // Light grey for muted text
+
+// Step 4: Safely extend the theme colors using map-merge
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": #EF4444,
+    "light": #F9FAFB,
+    "dark": #111827,
+    "muted": $text-muted,
+    "accent": #61d48b,      // Green accent
+    "grey-light": #F3F4F6,
+    "grey-medium": #D1D5DB,
+    "grey-dark": #374151
+  )
+);
+
+// Step 5: Import Bootstrap
+@import "../../../node_modules/bootstrap/scss/bootstrap";
