@@ -174,8 +174,8 @@ export default function ModernHomepage() {
             </Col>
             <Col lg={3} md={6} className="mb-4">
               <div className="stat-card">
-                <span className="stat-number">98.7%</span>
-                <span className="stat-label">Accuracy Rate</span>
+                <span className="stat-number">40k+</span>
+                <span className="stat-label">Company Benchmark Data</span>
               </div>
             </Col>
             <Col lg={3} md={6} className="mb-4">
@@ -264,10 +264,79 @@ export default function ModernHomepage() {
             </Col>
           </Row>
         </Container>
+        <Container>
+  {/* <Row className="text-center mb-5">
+    <Col>
+      <h2 className="display-5 fw-bold text-dark mb-3">
+        Trusted by industry leaders
+      </h2>
+      <p className="fs-5 text-muted">
+        See what our customers have to say about their experience
+      </p>
+    </Col>
+  </Row> */}
+  
+  <Row className="g-4 mt-4">
+    <Col lg={4}>
+      <div className="testimonial-card">
+        <p className="mb-4 fs-5">
+          "Our team's productivity has doubled. The seamless integration and intuitive 
+          interface make it a must-have for data teams."
+        </p>
+        <div className="d-flex align-items-center">
+          <div className="d-flex bg-success rounded-circle me-3 justify-content-center align-items-center" style={{ width: '3rem', height: '3rem' }}>
+            <FaUser className="text-light fs-4" />
+          </div>
+          <div>
+            <h6 className="mb-0 fw-bold">Anika Sharma</h6>
+            <small className="text-muted">VP Data, CloudNova</small>
+          </div>
+        </div>
+      </div>
+    </Col>
+    
+    <Col lg={4}>
+      <div className="testimonial-card">
+        <p className="mb-4 fs-5">
+          "We've reduced errors in reporting by 75%. It's fast, reliable, and 
+          backed by excellent customer support and handle by a good team ."
+        </p>
+        <div className="d-flex align-items-center">
+          <div className="d-flex bg-success rounded-circle me-3 justify-content-center align-items-center" style={{ width: '3rem', height: '3rem' }}>
+            <FaUser className="text-light fs-4" />
+          </div>
+          <div>
+            <h6 className="mb-0 fw-bold">David Lin</h6>
+            <small className="text-muted">Head of Operations, FinAxis</small>
+          </div>
+        </div>
+      </div>
+    </Col>
+    
+    <Col lg={4}>
+      <div className="testimonial-card">
+        <p className="mb-4 fs-5">
+          "An essential platform for any growing enterprise. The insights we've 
+          gained have led to smarter strategies and faster decisions."
+        </p>
+        <div className="d-flex align-items-center">
+          <div className="d-flex bg-success rounded-circle me-3 justify-content-center align-items-center" style={{ width: '3rem', height: '3rem' }}>
+            <FaUser className="text-light fs-4" />
+          </div>
+          <div>
+            <h6 className="mb-0 fw-bold">Julia Nguyen</h6>
+            <small className="text-muted">Chief Strategist, VisionLoop</small>
+          </div>
+        </div>
+      </div>
+    </Col>
+  </Row>
+</Container>
+
       </section>
 
       {/* CTA Section */}
-      <CallToAction />
+      {/* <CallToAction /> */}
       <div className='my-5'></div>
       <Footer />
     </>
