@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 
 import yearEndAnimation from '../../assets/images/questionLotties/Corporation Stickers Business.json';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 export default function QuestionSeventeen() {
   const [yearEnd, setYearEnd] = useState('');
@@ -34,6 +36,8 @@ export default function QuestionSeventeen() {
 
   return (
     <Fragment>
+      <DashboardNavbar/>
+      {/* <DashboardSidebar/> */}
       <div
         style={{
           minHeight: '100vh',

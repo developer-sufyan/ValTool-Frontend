@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Lottie from 'lottie-react';
 import thankyouAnimation from '../../assets/images/questionLotties/Corporation Stickers Business.json';
 import { Link } from 'react-router-dom'; // add this import
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 export default function QuestionComplete() {
   const handleNext = () => {
@@ -31,6 +33,9 @@ export default function QuestionComplete() {
     console.log('localStorage cleared and redirected to dashboard:', loc);
   };
   return (
+    <Fragment>
+    <DashboardNavbar/>
+    {/* <DashboardSidebar/> */}
     <div style={{
       minHeight: '100vh',
       display: 'flex',
@@ -77,5 +82,6 @@ export default function QuestionComplete() {
         </button>
       </div>
     </div>
+    </Fragment>
   );
 }

@@ -4,6 +4,8 @@ import Lottie from 'lottie-react';
 
 // Import your animation JSON file (replace with your actual file)
 import question8 from '../../assets/images/questionLotties/Corporation Stickers Business.json';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 export default function QuestionEight() {
   const [percent, setPercent] = useState('');
@@ -20,6 +22,8 @@ export default function QuestionEight() {
 
   return (
     <Fragment>
+      <DashboardNavbar/>
+      {/* <DashboardSidebar/> */}
       <div style={{
         minHeight: '100vh',
         display: 'flex',

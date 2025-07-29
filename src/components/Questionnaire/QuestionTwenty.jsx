@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 export default function QuestionTwenty() {
   const [useBenchmarks, setUseBenchmarks] = useState('no');
@@ -18,6 +20,7 @@ export default function QuestionTwenty() {
 
   return (
     <Fragment>
+      <DashboardNavbar/>
       <div style={{
         minHeight: '100vh',
         display: 'flex',
@@ -27,6 +30,8 @@ export default function QuestionTwenty() {
         background: 'rgba(0,0,0,0.04)',
         padding: '2rem 1rem',
       }}>
+      {/* <DashboardSidebar/> */}
+
         <h2 style={{ fontWeight: 700, marginBottom: '0.7rem', fontSize: '2.2rem', textAlign: 'center' }}>
           In the absence of projected financial information or a business plan, would you like us to develop these projections using industry benchmarks and economic information?
         </h2>

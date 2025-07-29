@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 export default function Questionnaire() {
   return (
+    <Fragment>
+      <DashboardNavbar/>
+      {/* <DashboardSidebar/> */}
     <div style={{
       minHeight: '100vh',
       display: 'flex',
@@ -38,5 +43,6 @@ export default function Questionnaire() {
         </div>
       </div>
     </div>
+    </Fragment>
   );
 }

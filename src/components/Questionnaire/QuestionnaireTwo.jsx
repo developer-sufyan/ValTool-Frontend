@@ -3,6 +3,8 @@ import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // TODO: Replace with your actual Lottie animation for question 2
 import question2 from '../../assets/images/questionLotties/2nd.json';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 
 
@@ -22,6 +24,8 @@ export default function QuestionnaireTwo() {
   };
   return (
     <Fragment>
+      <DashboardNavbar/>
+      {/* <DashboardSidebar/> */}
       <div style={{
         minHeight: '100vh',
         display: 'flex',
@@ -33,12 +37,12 @@ export default function QuestionnaireTwo() {
       }}>
         {/* Lottie animation placeholder */}
         <div style={{ width: 220, height: 220, marginBottom: '1.5rem' }}>
-          <Lottie
+          {/* <Lottie
             animationData={question2}
             loop
             autoplay
             style={{ width: '100%', maxWidth: '340px', height: 'auto' }}
-          />
+          /> */}
         </div>
 
         <h2 style={{ fontWeight: 700, marginBottom: '0.7rem', fontSize: '2.5rem', textAlign: 'center' }}>

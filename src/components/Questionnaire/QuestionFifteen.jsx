@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 export default function QuestionFifteen() {
   const [revenue, setRevenue] = useState('yes');
@@ -14,6 +16,8 @@ export default function QuestionFifteen() {
 
   return (
     <Fragment>
+      <DashboardNavbar/>
+      {/* <DashboardSidebar/> */}
       <div style={{
         minHeight: '100vh',
         display: 'flex',

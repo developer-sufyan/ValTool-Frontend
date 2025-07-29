@@ -2,6 +2,8 @@ import Lottie from 'lottie-react';
 import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import questionLottie from '../../assets/images/questionLotties/Corporation Stickers Business.json';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 export default function QuestionTwelve() {
   const [isConcession, setIsConcession] = useState('no');
@@ -16,6 +18,8 @@ export default function QuestionTwelve() {
 
   return (
     <Fragment>
+      <DashboardNavbar/>
+      {/* <DashboardSidebar/> */}
       <div style={{
         minHeight: '100vh',
         display: 'flex',

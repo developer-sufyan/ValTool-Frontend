@@ -2,6 +2,8 @@ import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import projectionAnimation from '../../assets/images/questionLotties/Corporation Stickers Business.json';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 export default function QuestionNineteen() {
   const [projection, setProjection] = useState('one');
@@ -22,6 +24,8 @@ export default function QuestionNineteen() {
 
   return (
     <Fragment>
+      <DashboardNavbar/>
+      {/* <DashboardSidebar/> */}
       <div style={{
         minHeight: '100vh',
         display: 'flex',

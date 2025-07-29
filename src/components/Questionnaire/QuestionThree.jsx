@@ -3,6 +3,8 @@ import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // TODO: Replace with your actual Lottie animation for question 3
 import question3 from '../../assets/images/questionLotties/Corporation Stickers Business.json';
+import DashboardNavbar from '../Dashboard/DashboardNavbar';
+import DashboardSidebar from '../Dashboard/DashboardSidebar';
 
 const valuationDates = [
   "30 June 2023",
@@ -44,6 +46,8 @@ export default function QuestionThree() {
 
   return (
     <Fragment>
+      <DashboardNavbar/>
+      {/* <DashboardSidebar/> */}
       <div style={{
         minHeight: '100vh',
         display: 'flex',

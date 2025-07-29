@@ -1,147 +1,134 @@
 import { faVuejs } from "@fortawesome/free-brands-svg-icons";
-import {
-  faArrowLeft,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Fragment, useState } from "react";
-import {
-  Sidebar,
-  Menu,
-  MenuItem,
-  sidebarClasses,
-} from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem, sidebarClasses } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import { MdOutlineDashboard } from "react-icons/md";
 import { GoProject } from "react-icons/go";
 import { FaRegUser } from "react-icons/fa";
-import { IoLogOutOutline } from "react-icons/io5";
 
 export default function DashboardSidebar() {
   const [collapsed, setCollapsed] = useState(false);
 
-  const togglePostion = () => {
-    setCollapsed((prev) => !prev);
+  const togglePosition = () => {
+    setCollapsed(prev => !prev);
   };
 
   return (
     <Fragment>
-      <div>
-        <div>
-          <Sidebar
-            collapsed={collapsed}
-            rootStyles={{
-              [`.${sidebarClasses.container}`]: {
-                background: "linear-gradient(180deg, #000000 )",
+      <Sidebar
+        collapsed={collapsed}
+        rootStyles={{
+          [`.${sidebarClasses.container}`]: {
+            background: "linear-gradient(180deg, #0f172a 0%, #1e293b 100%)",
+            color: "#f1f5f9",
+            fontSize: "1rem",
+            fontWeight: "500",
+            minHeight: "100vh",
+            width: collapsed ? "100px" : "250px",
+            transition: "width 0.3s ease",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            boxShadow: "2px 0 10px rgba(0,0,0,0.15)",
+            borderRight: "1px solid #334155",
+            zIndex: 1000,
+          },
+        }}
+      >
+        <Menu
+          menuItemStyles={{
+            button: {
+              padding: "12px 20px",
+              borderRadius: "6px",
+              color: "#cbd5e1",
+              margin: "6px 12px",
+              display: "flex",
+              alignItems: "center",
+              "&:hover": {
+                backgroundColor: "#22c55e",
                 color: "#fff",
-                fontSize: "1rem",
-                fontWeight: "bold",
-                minHeight: "100vh",
-                top: 0,
-                left: 0,
-                overflow: "auto",
-                zIndex: 1000,
-                width: collapsed ? "80px" : "240px",
-                transition: "width 0.18s cubic-bezier(0.4, 0, 0.2, 1)",
-                boxShadow: "2px 0 16px rgba(41,91,231,0.08)",
-                borderRight: "1.5px solid #e3e8ee",
-                position: "fixed",
-              }
+              },
+              transition: "background 0.3s, color 0.3s",
+            },
+          }}
+        >
+          {/* Brand */}
+          <div className="d-flex align-items-center gap-2 py-4 ps-4 px-3">
+            <Link to="/" className="text-decoration-none">
+              <FontAwesomeIcon
+              icon={faVuejs}
+              size="2x"
+              className="text-success"
+              style={{
+                filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
+              }}
+            />
+            </Link>
+            {!collapsed && (
+              <h5
+                className="mb-0 fw-bold text-white"
+                style={{ letterSpacing: "1px", fontSize: "1.1rem" }}
+              >
+                Valuation Tool
+              </h5>
+            )}
+          </div>
+
+          <MenuItem component={<Link to="/dashboard" />}>
+            <div className="d-flex align-items-center gap-3">
+              <MdOutlineDashboard className="fs-5" />
+              {!collapsed && "Dashboard"}
+            </div>
+          </MenuItem>
+
+          <MenuItem component={<Link to="/project" />}>
+            <div className="d-flex align-items-center gap-3">
+              <GoProject className="fs-5" />
+              {!collapsed && "Project"}
+            </div>
+          </MenuItem>
+
+          <MenuItem component={<Link to="/profile" />}>
+            <div className="d-flex align-items-center gap-3">
+              <FaRegUser className="fs-5" />
+              {!collapsed && "Profile"}
+            </div>
+          </MenuItem>
+
+          {/* Divider */}
+          <hr style={{ borderColor: "#475569", margin: "1.2rem 0" }} />
+
+          {/* Toggle Button */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "20px",
+              width: "100%",
+              textAlign: "center",
             }}
           >
-            <Menu />
-            <Menu
-              menuItemStyles={{
-                button: {
-                  padding: "12px 22px",
-                  borderRadius: "8px",
-                  color:'#22C55E',
-                  margin: "0.2rem 0",
-                  "&:hover": {
-                    background: "#22C55E",
-                    color: "#ffffff",
-                  },
-                  fontWeight: 500,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                  transition: "background 0.18s, color 0.18s",
-                },
+            <button
+              onClick={togglePosition}
+              className="btn text-white px-3 py-2"
+              style={{
+                fontSize: "0.95rem",
+                backgroundColor: "transparent",
+                border: "1px solid #475569",
+                borderRadius: "6px",
+                width: collapsed ? "40px" : "80%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 auto",
               }}
             >
-              <div className="d-flex align-items-center justify-content-center flex-row mb-3 gap-3">
-                <div className="image d-flex mb-3 pt-2">
-                  <FontAwesomeIcon
-                    icon={faVuejs}
-                    size="2x"
-                    className="text-white"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: collapsed ? "center" : null,
-                      paddingLeft: collapsed ? "18px" : "10px",
-                      filter: "drop-shadow(0 2px 8px #000000aa)"
-                    }}
-                  />
-                </div>
-                <div className='d-flex flex-column pe-2'>
-                  {!collapsed && (
-                    <>
-                      <h5 className="mb-0" style={{ fontWeight: 700, color: "#fff", letterSpacing: "1px" }}>Valuation Tool</h5>
-                      {/* <span className='text-white-50' style={{ fontSize: "12px", marginTop: '-0.4rem' }}>Dashboard</span> */}
-                    </>
-                  )}
-                </div>
-              </div>
-
-              <MenuItem component={<Link to="/dashboard" />} className="fw-normal">
-                <span className="d-flex align-items-center" style={{ gap: "12px", justifyContent: collapsed ? "center" : "flex-start" }}>
-                  <MdOutlineDashboard className="fs-5" />
-                  {!collapsed && "Dashboard"}
-                </span>
-              </MenuItem>
-
-              <MenuItem component={<Link to="/project" />} className="fw-normal">
-                <span className="d-flex align-items-center" style={{ gap: "12px", justifyContent: collapsed ? "center" : "flex-start" }}>
-                  <GoProject className="fs-5" />
-                  {!collapsed && "Project"}
-                </span>
-              </MenuItem>
-
-              <MenuItem component={<Link to="/profile" />} className="fw-normal">
-                <span className="d-flex align-items-center" style={{ gap: "12px", justifyContent: collapsed ? "center" : "flex-start" }}>
-                  <FaRegUser className="fs-5" />
-                  {!collapsed && "Profile"}
-                </span>
-              </MenuItem>
-
-              <hr style={{ borderColor: "#eaf0fe", margin: "1rem 0" }} />
-
-              
-
-              <button
-                onClick={togglePostion}
-                className="btn btn-outline-light text-success bg-transparent  d-flex align-items-center gap-2"
-                style={{
-                  width: "100%",
-                  fontSize: "1rem",
-                  background: "",
-                  border: "none",
-                  borderRadius: "8px",
-                  // marginTop: "32rem",
-                  paddingLeft:collapsed ? "0" : "1rem",
-                  justifyContent: collapsed ? "center" : "flex-start",
-                  top:"95%",
-                  left: collapsed ? "0" :"0",
-                  position: "absolute",
-
-                }}
-              >
-                <FontAwesomeIcon icon={collapsed ? faArrowRight : faArrowLeft} className="fs-5" />
-              </button>
-            </Menu>
-          </Sidebar>
-        </div>
-      </div>
+              <FontAwesomeIcon icon={collapsed ? faArrowRight : faArrowLeft} />
+            </button>
+          </div>
+        </Menu>
+      </Sidebar>
     </Fragment>
   );
 }

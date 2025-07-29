@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Lottie from 'lottie-react';
 import analyticAnimation from '../assets/animations/DataAnalysis.json';
 import CallToAction from './CallToAction';
+import CountUp from 'react-countup';
 
 export default function ModernHomepage() {
   return (
@@ -68,12 +69,12 @@ export default function ModernHomepage() {
             </Col>
             
             <Col lg={5} className="d-flex flex-column align-items-center text-center">
-            <Lottie
+            {/* <Lottie
                 animationData={analyticAnimation}
                 loop={true}
                 autoplay={true}
                 style={{ width: 300}}
-              />
+              /> */}
               <div className="position-relative">
                 <div className="bg-light rounded-4 p-4 shadow-md" style={{ background: 'linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%)' }}>
                   <div className="row g-3">
@@ -163,36 +164,44 @@ export default function ModernHomepage() {
       </section>
 
       {/* Stats Section */}
-      <section className="stats-section py-5 bg-primary">
-        <Container>
-          <Row className="text-center">
-            <Col lg={3} md={6} className="mb-4">
-              <div className="stat-card">
-                <span className="stat-number">10K+</span>
-                <span className="stat-label">Active Users</span>
-              </div>
-            </Col>
-            <Col lg={3} md={6} className="mb-4">
-              <div className="stat-card">
-                <span className="stat-number">40k+</span>
-                <span className="stat-label">Company Benchmark Data</span>
-              </div>
-            </Col>
-            <Col lg={3} md={6} className="mb-4">
-              <div className="stat-card">
-                <span className="stat-number">$2.1B</span>
-                <span className="stat-label">Assets Valued</span>
-              </div>
-            </Col>
-            <Col lg={3} md={6} className="mb-4">
-              <div className="stat-card">
-                <span className="stat-number">150+</span>
-                <span className="stat-label">Countries</span>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <section className="stats-section py-5 bg-primary text-white">
+      <Container>
+        <Row className="text-center">
+          <Col lg={3} md={6} className="mb-4">
+            <div className="stat-card">
+              <span className="stat-number">
+                <CountUp end={10000} duration={2.5} separator="," suffix="+" />
+              </span>
+              <span className="stat-label d-block mt-2">Active Users</span>
+            </div>
+          </Col>
+          <Col lg={3} md={6} className="mb-4">
+            <div className="stat-card">
+              <span className="stat-number">
+                <CountUp end={40000} duration={2.5} separator="," suffix="+" />
+              </span>
+              <span className="stat-label d-block mt-2">Company Benchmark Data</span>
+            </div>
+          </Col>
+          <Col lg={3} md={6} className="mb-4">
+            <div className="stat-card">
+              <span className="stat-number">
+                <CountUp end={2.1} duration={2.5} decimals={1} prefix="$" suffix="B" />
+              </span>
+              <span className="stat-label d-block mt-2">Assets Valued</span>
+            </div>
+          </Col>
+          <Col lg={3} md={6} className="mb-4">
+            <div className="stat-card">
+              <span className="stat-number">
+                <CountUp end={150} duration={2.5} suffix="+" />
+              </span>
+              <span className="stat-label d-block mt-2">Countries</span>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
 
       {/* Testimonials Section */}
       <section className="py-5 bg-light">
@@ -265,16 +274,7 @@ export default function ModernHomepage() {
           </Row>
         </Container>
         <Container>
-  {/* <Row className="text-center mb-5">
-    <Col>
-      <h2 className="display-5 fw-bold text-dark mb-3">
-        Trusted by industry leaders
-      </h2>
-      <p className="fs-5 text-muted">
-        See what our customers have to say about their experience
-      </p>
-    </Col>
-  </Row> */}
+  
   
   <Row className="g-4 mt-4">
     <Col lg={4}>

@@ -71,14 +71,21 @@ export default function ProjectList() {
           </tr>
         </thead>
         <tbody>
-          {(() => {
+          {loading ? (
+            <tr>
+              <td colSpan="4" className="text-center py-5">
+                <div style={{ fontSize: '1.2rem', color: '#888', fontWeight: 500 }}>
+                  Loading...
+                </div>
+              </td>
+            </tr>
+          ) : (() => {
             const userProjects = projects.filter(project => String(project.user_id) === String(userId));
             if (userProjects.length === 0) {
               return (
                 <tr>
                   <td colSpan="4" className="text-center py-5">
                     <div style={{ fontSize: '1.2rem', color: '#888', fontWeight: 500 }}>
-                      {/* <span role="img" aria-label="info" style={{ fontSize: '2rem', verticalAlign: 'middle', marginRight: 8 }}>ℹ️</span> */}
                       You don't have any projects yet.
                     </div>
                   </td>
