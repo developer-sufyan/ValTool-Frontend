@@ -108,7 +108,7 @@ export default function ProjectList() {
                     onMouseEnter={e => { e.currentTarget.style.background = "#051c38"; e.currentTarget.style.color = "#fff"; }}
                     onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#051c38"; }}
                   >
-                    View
+                    <Link to={`/project/detail/${project.id}`} className='text-decoration-none text-primary'>View Details</Link>
                   </Button>
                 </td>
               </tr>

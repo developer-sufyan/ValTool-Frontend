@@ -43,6 +43,7 @@ import QuestionTwentyOne from './components/Questionnaire/QuestionTwentyOne.jsx'
 import ForgotPassword from './components/ForgotPassword.jsx';
 import NewPassword from './components/NewPassword.jsx';
 import AddProject from './components/Dashboard/AddProject.jsx';
+import ProjectDetail from './components/Dashboard/ProjectDetail.jsx';
 // import ModernHomepage from './components/ModernHomepage.jsx';
 
 
@@ -101,7 +102,23 @@ function App() {
                 <AddProject/>
               </EmailVerificationPrompt>
             </ProtectedRoute>
+          }/>
+          <Route path="/project" element={
+            <ProtectedRoute>
+              <EmailVerificationPrompt>
+                <ProjectPage/>
+              </EmailVerificationPrompt>
+            </ProtectedRoute>
           }/> 
+          <Route path="/project/detail/:id" element={
+            <ProtectedRoute>
+              <EmailVerificationPrompt>
+                <ProjectDetail/>
+              </EmailVerificationPrompt>
+            </ProtectedRoute>
+          }/> 
+
+
           {/* Protected Questionnaire Routes */}       
           <Route path="/questionnaire" element={
             <ProtectedRoute>

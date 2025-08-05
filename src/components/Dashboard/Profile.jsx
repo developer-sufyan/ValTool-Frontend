@@ -1,8 +1,35 @@
 import { faFacebook, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { Fragment } from 'react'
+import React, { Fragment, use, useEffect, useState } from 'react'
 import profile from '../../assets/images/profile.jpg'
+import apiService from '../../services/apiService';
 export default function Profile() {
+
+
+  const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  console.log('Profile state:', profile);
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        setLoading(true);
+        const response = await apiService.get('/api/users/me');
+        // console.log('Profile data fetched:', response);
+        console.log("profile data" , response)
+        setProfile(response);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error fetching profile:', err);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
   return (
     <Fragment>
         <div className="container" style={{ fontFamily: "'Inter', 'Segoe UI', Arial, sans-serif" }}>
@@ -24,13 +51,13 @@ export default function Profile() {
                     <div className="col-md-3 px-md-1">
                       <div className="form-group">
                          <label className="text-primary fw-bold">Username</label>
-                        <input type="text" className="form-control border border-gray" placeholder="Username" />
+                        <input type="text" className="form-control border border-gray" placeholder={profile.full_name} />
                       </div>
                     </div>
                     <div className="col-md-4 pl-md-1">
                       <div className="form-group">
                         <label for="exampleInputEmail1" className="text-primary fw-bold">Email address</label>
-                        <input type="email" className="form-control border border-gray" placeholder="mike@email.com"/>
+                        <input type="email" className="form-control border border-gray" placeholder={profile.email}/>
                       </div>
                     </div>
                   </div>
